@@ -1,0 +1,21 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const tripController_1 = require("../controllers/tripController");
+const authMiddleware_1 = require("../middleware/authMiddleware");
+const router = express_1.default.Router();
+router.post("/", authMiddleware_1.protect, tripController_1.createTrip);
+router.get("/my", authMiddleware_1.protect, tripController_1.getMyTrips);
+router.get("/:id", authMiddleware_1.protect, tripController_1.getTrip);
+router.post("/:id/invite", authMiddleware_1.protect, tripController_1.inviteToTrip);
+router.get("/invites/my", authMiddleware_1.protect, tripController_1.getMyInvites);
+router.post("/invites/:inviteId/accept", authMiddleware_1.protect, tripController_1.acceptInvite);
+router.post("/invites/:inviteId/decline", authMiddleware_1.protect, tripController_1.declineInvite);
+router.post("/:id/day/:dayIndex/activity/:activityIndex/react", authMiddleware_1.protect, tripController_1.reactToActivity);
+router.post("/:id/day/:dayIndex/hotel/:hotelIndex/react", authMiddleware_1.protect, tripController_1.reactToHotel);
+router.post("/:id/expenses", authMiddleware_1.protect, tripController_1.addExpense);
+router.post("/:id/chat", authMiddleware_1.protect, tripController_1.addChatMessage);
+exports.default = router;

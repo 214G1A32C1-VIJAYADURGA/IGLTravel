@@ -1,0 +1,4 @@
+id,mode,destination,cost
+1,flight,Agra,150.00
+2,train,Goa,80.00
+3,bus,Jaipur,50.00
