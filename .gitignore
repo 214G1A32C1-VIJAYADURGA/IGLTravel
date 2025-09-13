@@ -1,0 +1,46 @@
+# =====================
+# Node.js / Backend
+# =====================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.env
+/dist
+/build
+
+# =====================
+# Vite + React / Frontend
+# =====================
+.vite/
+*.local
+*.lock
+public/assets/
+*.cache
+
+# =====================
+# MacOS system files
+# =====================
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# =====================
+# VS Code / IDE
+# =====================
+.vscode/
+*.code-workspace
+
+# =====================
+# Misc
+# =====================
+*.log
+coverage/
